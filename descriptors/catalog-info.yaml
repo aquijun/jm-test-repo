@@ -9,14 +9,14 @@ metadata:
   annotations:
     github.com/project-slug: aquijun/jm-test-repo
   links:
-    - url: dsw
+    - url: https://dashboard.example.com
       title: dashboard
 spec:
   type: service
   owner: user:guest
   lifecycle: DEV
   providesApis:
-    - web-bff-api
+    - webb-bff-api
   consumesApis:
     - product-api
     - leads-api
@@ -26,7 +26,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: web-bff-api
+  name: webb-bff-api
   description: desc
   tags:
     - api
@@ -38,7 +38,7 @@ spec:
   definition: |
     openapi: 3.0.0
     info:
-      title: web-bff-api
+      title: webb-bff-api
       version: 1.0.0
     paths:
       /:
