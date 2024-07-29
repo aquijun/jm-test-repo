@@ -1,16 +1,47 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: web-bff servcie
-  description: esc
-  tags: 
+  name: webb-bff-service
+  description: desc
+  tags: tag1,tag2
   annotations:
-    github.com/project-slug: 
+    github.com/project-slug: aquijun/jm-test-repo
   links:
+    - url: dasa
+      title: Dashboard
 spec:
   type: service
   owner: user:guest
   lifecycle: DEV
   providesApis:
+    - web-bff-api
   consumesApis:
+    - product-api
+    - leads-api
   dependsOn:
+    - Component:dcwsf
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: web-bff-api
+  description: desc
+  tags:
+    - api
+    - webb-bff-service
+spec:
+  type: openapi
+  lifecycle: DEV
+  owner: user:guest
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: web-bff-api
+      version: 1.0.0
+    paths:
+      /:
+        get:
+          summary: Sample endpoint
+          responses:
+            '200':
+              description: Successful response
