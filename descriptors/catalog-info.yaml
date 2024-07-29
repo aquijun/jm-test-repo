@@ -1,46 +1,16 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: web-bff-service
-  description: desc
-  tags: tag1,tag2
+  name: web-bff servcie
+  description: esc
+  tags: 
   annotations:
-    github.com/project-slug: aquijun/jm-test-repo
+    github.com/project-slug: 
   links:
-    - url: url
-      title: desc
 spec:
   type: service
   owner: user:guest
   lifecycle: DEV
   providesApis:
-    - web-bff-api
   consumesApis:
-    - product-api
-    - leads-api
   dependsOn:
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: web-bff-api
-  description: 
-  tags:
-    - api
-    - web-bff-service
-spec:
-  type: openapi
-  lifecycle: DEV
-  owner: user:guest
-  definition: |
-    openapi: 3.0.0
-    info:
-      title: web-bff-api
-      version: 1.0.0
-    paths:
-      /:
-        get:
-          summary: Sample endpoint
-          responses:
-            '200':
-              description: Successful response
